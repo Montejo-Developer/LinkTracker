@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="419.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="linktracker.FXMLDocumentController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="508.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#LoadFile" text="Load file" />
+              <MenuItem mnemonicParsing="false" onAction="#CloseApp" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Process">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#startProcess" text="Start" />
+                  <MenuItem mnemonicParsing="false" onAction="#clearProcess" text="Clear" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox layoutX="4.0" layoutY="28.0" prefHeight="388.0" prefWidth="500.0">
+         <children>
+            <ListView fx:id="list_webs" prefHeight="387.0" prefWidth="218.0" />
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Total pages" />
+                  <Label fx:id="lb_total_pages" text="0" textAlignment="CENTER" />
+                  <Label text="Processed" />
+                  <Label fx:id="lb_processed" text="0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Total Links" />
+                  <Label fx:id="lb_total_links" text="0" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+            <ListView fx:id="list_links" prefHeight="298.0" prefWidth="228.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
